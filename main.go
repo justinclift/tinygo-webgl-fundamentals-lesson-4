@@ -171,6 +171,6 @@ func setRectangle(gl *webgl.Context, x, y, width, height float32) {
 		x2, y1,
 		x2, y2,
 	}
-	positions := js.TypedArrayOf(positionsNative)
+	positions := webgl.SliceToTypedArray(positionsNative)
 	gl.BufferData(webgl.ARRAY_BUFFER, positions, webgl.STATIC_DRAW)
 }
